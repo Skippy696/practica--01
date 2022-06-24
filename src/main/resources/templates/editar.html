@@ -10,46 +10,51 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilo1.css">
 </head>
+
 <body>
     <section>
         <h1 class="text-center m-5"> Editar</h1>
-        <form th:action="@{/add}" method="post" th:object="${estado}">
-            <div class="form-control">
-                <!--hidden id -->
+        <div class="container">
+            <form th:action="@{/add}" method="post" th:object="${estado}">
+
                 <input type="hidden" class="form-control" name="id" th:field="*{idEstado}">
-            </div>
-            <div class="form-control">
-                <label for="pais"> País </label>
-                <input type="text" class="form-control" name="pais">
+
+                <div class="form-control">
+                    <label for="pais"> País </label>
+                    <input type="text" class="form-control" name="pais">
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <div class="form-control">
-                <label for="estado"> Estado </label>
-                <input type="text" class="form-control" name="estado">
+                <div class="form-control">
+                    <label for="estado"> Estado </label>
+                    <input type="text" class="form-control" name="estado">
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <div class="form-control">
-                <label for="capital"> Capital </label>
-                <input type="text" class="form-control" name="capital">
+                <div class="form-control">
+                    <label for="capital"> Capital </label>
+                    <input type="text" class="form-control" name="capital">
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <div class="form-control">
-                <label for="poblacion"> Población </label>
-                <input type="text" class="form-control" name="poblacion">
+                <div class="form-control">
+                    <label for="poblacion"> Población </label>
+                    <input type="text" class="form-control" name="poblacion">
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <div class="form-control">
-                <label for="idioma"> Idioma </label>
-                <input type="text" class="form-control" name="idioma">
-                <br>
-            </div>
-            <button type="submit" class="btn btn-primary btn-success">Agregar</button>
+                <div class="form-control">
+                    <label for="idioma"> Idioma </label>
+                    <input type="text" class="form-control" name="idioma">
+                    <br>
+                </div>
+                <button type="submit" class="btn btn-primary btn-success">Agregar</button>
+            </form>
+        </div>
+        </div>
     </section>
 
 </body>
+<footer th:replace="index :: footer"></footer>
 
 </html>

@@ -78,6 +78,4 @@ public class modelEstado implements Serializable {
         this.idioma = idioma;
     }
 
-    
-
 }

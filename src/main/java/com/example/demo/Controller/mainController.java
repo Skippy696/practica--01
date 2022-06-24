@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-
 import com.example.demo.Models.modelEstado;
 import com.example.demo.Services.estadoServices;
 
@@ -36,9 +33,9 @@ public class mainController {
         return "redirect:/";
     }
 
-    @GetMapping("/edit/{idEstado}") 
+    @GetMapping("/edit/{idEstado}")
     public String edit(modelEstado estado, Model model) {
-       estado = estadoService.find(estado.getIdEstado());
+        estado = estadoService.find(estado.getIdEstado());
         model.addAttribute("estado", estado);
         return "editar";
     }
