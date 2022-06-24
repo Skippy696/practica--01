@@ -1,0 +1,54 @@
+<!doctype html>
+<html hxmlns=xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilo1.css">
+</head>
+
+<body>
+    <h1 class="text-center m-5" > Datos de Estado </h1>
+    <div class="text-center m-5 ">
+        <a href th:href="@{/new}" class="btn btn-primary btn-success">Agregar</a>
+    </div>
+    <table class="table  table-bordered text-center">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>País</th>
+                <th>Estado</th>
+                <th>Capital</th>
+                <th>Población</th>
+                <th>Idioma</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="estado : ${estados}">
+                <td th:text="${estado.idEstado}"></td>
+                <td th:text="${estado.pais}"></td>
+                <td th:text="${estado.estado}"></td>
+                <td th:text="${estado.capital}"></td>
+                <td th:text="${estado.poblacion}"></td>
+                <td th:text="${estado.idioma}"></td>
+                <td>
+                    <a th:href="@{/edit/} + ${estado.idEstado}" class="btn btn-primary">Editar</a>
+                    <a th:href="@{/delete/} + ${estado.idEstado}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div th:if="${estados.size() == 0}" class="alert alert-danger" role="alert">
+        <strong>¡Error!</strong> No hay datos, agregue uno.
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>
